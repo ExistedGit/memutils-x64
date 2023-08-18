@@ -7,9 +7,8 @@
 #include <array>
 #include <vector>
 
-#ifndef MEMUTILS_GLOBAL_SCOPE 
 namespace memutils {
-#endif
+
 	// Wrapper for working with memory addresses
 	class Address {
 	public:
@@ -188,7 +187,7 @@ namespace memutils {
 				patches[addr] = data;
 		}
 
-		
+
 		static Address Scan(std::string_view signature, std::string_view moduleName) {
 			return PatternScanInModule(moduleName.data(), ParseCombo(signature).data());
 		}
@@ -318,6 +317,4 @@ namespace memutils {
 		}
 	};
 
-#ifndef MEMUTILS_GLOBAL_SCOPE 
 } // namespace memutils
-#endif
